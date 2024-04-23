@@ -28,3 +28,12 @@ export async function getDeck(req: Request, res: Response) {
   console.log('5.', deck);
   res.json(deck);
 }
+
+// delete a deck card
+export async function deleteDeck(req: Request, res: Response) {
+  const deckId = req.params.deckId;
+  console.log('6.', deckId);
+  const deck = await Deck.findByIdAndDelete(deckId);
+  console.log('7.', deck);
+  res.json(deck);
+}
