@@ -52,3 +52,17 @@ export async function createDeckCard(req: Request, res: Response) {
   console.log('11.', deck);
   res.json(deck);
 }
+
+// delete a deck from the cards
+export async function deleteDeckCard(req: Request, res: Response) {
+  const deckId = req.params.deckId;
+  const index = req.params.index;
+  console.log('12.', deckId, index);
+  const deck = await Deck.findById(deckId);
+  console.log('13.', deck);
+  if (!deck) return res.status(400).send('no deck of this id exists');
+  deck.cards.splice(parseInt(index), 1);
+  await deck.save();
+  console.log('14.', deck);
+  res.json(deck);
+}
