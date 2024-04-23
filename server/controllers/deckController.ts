@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import Deck from '../models/Deck';
 
-export async function createDeckController(req: Request, res: Response) {
+// create a new Deck
+export async function createDeck(req: Request, res: Response) {
   const newDeck = new Deck({
     title: req?.body?.title,
   });
@@ -10,4 +11,11 @@ export async function createDeckController(req: Request, res: Response) {
   const createdDeck = await newDeck.save();
   console.log('2.', createdDeck);
   res.json(createdDeck);
+}
+
+// get all the deck cards
+export async function getDecks(req: Request, res: Response) {
+  const decks = await Deck.find({});
+  console.log('3.', decks);
+  res.json(decks);
 }
