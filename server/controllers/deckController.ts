@@ -37,3 +37,18 @@ export async function deleteDeck(req: Request, res: Response) {
   console.log('7.', deck);
   res.json(deck);
 }
+
+// create a new deck card
+export async function createDeckCard(req: Request, res: Response) {
+  const deckId = req.params.deckId;
+  console.log('8.', deckId);
+  const deck = await Deck.findById(deckId);
+  console.log('9.', deck);
+  if (!deck) return res.status(400).send('no deck of this id exists');
+  const { text } = req.body;
+  console.log('10.', text);
+  deck.cards.push(text);
+  await deck.save();
+  console.log('11.', deck);
+  res.json(deck);
+}
