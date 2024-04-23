@@ -1,10 +1,6 @@
-const API_URL = `${process.env.REACT_APP__API_URL}/api/v1`;
+import { TDeck } from '../types';
 
-export type TDeck = {
-  title: string;
-  cards: string[];
-  _id: string;
-};
+const API_URL = `${process.env.REACT_APP__API_URL}/api/v1`;
 
 export async function createDeck(title: string) {
   const response = await fetch(`${API_URL}/decks`, {
