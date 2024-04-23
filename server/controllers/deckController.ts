@@ -19,3 +19,12 @@ export async function getDecks(req: Request, res: Response) {
   console.log('3.', decks);
   res.json(decks);
 }
+
+// get single deck card
+export async function getDeck(req: Request, res: Response) {
+  const { deckId } = req.params;
+  console.log('4.', deckId);
+  const deck = await Deck.findById(deckId);
+  console.log('5.', deck);
+  res.json(deck);
+}
