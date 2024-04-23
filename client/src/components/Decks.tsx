@@ -3,6 +3,7 @@ import { TDeck } from '../types';
 import { deleteDeck, getDecks } from '../api';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Decks.module.css';
+import DeckForm from './DeckForm';
 
 export default function Decks() {
   const [decks, setDecks] = useState<TDeck[]>([]);
@@ -23,7 +24,6 @@ export default function Decks() {
   return (
     <div>
       <h1>Your Decks</h1>
-
       <ul className={`${styles.decks}`}>
         {decks.map((deck) => (
           <li key={deck._id}>
@@ -33,6 +33,7 @@ export default function Decks() {
           </li>
         ))}
       </ul>
+      <DeckForm />
     </div>
   );
 }
