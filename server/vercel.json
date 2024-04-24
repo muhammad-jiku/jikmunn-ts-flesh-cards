@@ -2,8 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.js",
-      "use": "@vercel/node"
+      "src": "public/index.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["public/**"] }
     }
   ],
   "routes": [
@@ -18,7 +19,7 @@
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
       },
-      "dest": "/"
+      "dest": "public/index.js"
     }
   ]
 }
