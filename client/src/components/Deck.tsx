@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+// external import
 import { useParams } from 'react-router-dom';
+// internal imports
 import { TDeck } from '../types';
 import { createCard, deleteCard, getDeck } from '../api';
 import styles from '../styles/Deck.module.css';
@@ -18,7 +20,6 @@ export default function Deck() {
   }
 
   async function handleDeleteCard(index: number) {
-    console.log(deckId);
     if (!deckId) return;
     const newDeck = await deleteCard(deckId, index);
     setCards(newDeck.cards);

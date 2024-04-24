@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+// external import
+import { Link } from 'react-router-dom';
+// internal imports
 import { TDeck } from '../types';
 import { deleteDeck, getDecks } from '../api';
-import { Link } from 'react-router-dom';
 import styles from '../styles/Decks.module.css';
 import DeckForm from './DeckForm';
 

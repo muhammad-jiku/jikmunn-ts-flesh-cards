@@ -1,7 +1,9 @@
 import React from 'react';
+// external import
+import { Route, Routes } from 'react-router-dom';
+// internal imports
 import './App.css';
 import { Deck, Decks, Header } from './components';
-import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
