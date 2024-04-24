@@ -1,3 +1,4 @@
+// internal imports
 import { app } from './app';
 import { connectToDB } from './utils/connectToDB';
 

@@ -1,5 +1,7 @@
+// external imports
 import express from 'express';
 import cors from 'cors';
+// internal import
 import { deckRoute } from './routes/deckRoute';
 
 export const app = express();

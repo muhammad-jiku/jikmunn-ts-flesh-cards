@@ -1,3 +1,4 @@
+// external imports
 import { config } from 'dotenv';
 config();
 import mongoose, { ConnectOptions } from 'mongoose';
