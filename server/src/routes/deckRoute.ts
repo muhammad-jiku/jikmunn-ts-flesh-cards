@@ -15,4 +15,4 @@ export const deckRoute = express.Router({
 deckRoute.route('/decks').get(getDecks).post(createDeck);
 deckRoute.route('/decks/:deckId').get(getDeck).delete(deleteDeck);
 deckRoute.route('/decks/:deckId/cards').post(createDeckCard);
-deckRoute.route('/decks/:deckId/cards/:index').get(deleteDeckCard);
+deckRoute.route('/decks/:deckId/cards/:index').delete(deleteDeckCard);

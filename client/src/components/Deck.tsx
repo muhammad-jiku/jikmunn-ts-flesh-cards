@@ -18,6 +18,7 @@ export default function Deck() {
   }
 
   async function handleDeleteCard(index: number) {
+    console.log(deckId);
     if (!deckId) return;
     const newDeck = await deleteCard(deckId, index);
     setCards(newDeck.cards);
