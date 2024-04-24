@@ -1,6 +1,3 @@
-import { config } from 'dotenv';
-config();
-
 import express from 'express';
 import cors from 'cors';
 import { deckRoute } from './routes/deckRoute';

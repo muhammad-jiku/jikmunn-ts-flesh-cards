@@ -1,3 +1,5 @@
+import { config } from 'dotenv';
+config();
 import mongoose, { ConnectOptions } from 'mongoose';
 
 const uri = `${process.env.DB_URI}`;
@@ -11,7 +13,7 @@ export const connectToDB = async () => {
     .connect(uri, options)
     .then((data) => {
       console.log('DB connected!!');
-      //   console.log(`Mongodb connected with server: ${data.connection.host}`);
+      // console.log(`Mongodb connected with server: ${data?.connection?.host}`);
     })
     .catch((err) => {
       // console.log(err);
